@@ -18,7 +18,6 @@ then
 fi
 
 SITE=${1}
-#HOSTNAME=`hostname`
 ADMIN_NAME=""
 if dpkg --get-selections | grep -q clamav && [ $? = 0 ]; then VIRUS_TYPE="clamav" else VIRUS_TYPE="none installed"; fi
 VIRUS_SIG_FILE="Linux"
@@ -44,9 +43,8 @@ ACCESS_NO_DEFAULT_STRINGS="n/a"
 ACCESS_DISABLE_GUEST="no guest accounts"
 ACCESS_NO_DEFAULT_ACCOUNTS="no default accounts"
 
-
-#LISTEN_PORTS=`netstat -lnat | grep LISTEN | awk '{print $4}' |  sort | uniq | paste -s --delimiters=","`
-#PENDING_UPDATES=`/usr/lib/update-notifier/apt-check 2>&1 | cut -d ';' -f 2`
+LISTEN_PORTS=`netstat -lnat | grep LISTEN | awk '{print $4}' |  sort | uniq | paste -s --delimiters=","`
+PENDING_UPDATES=`/usr/lib/update-notifier/apt-check 2>&1 | cut -d ';' -f 2`
 
 
 if [ -z ${2} ]
