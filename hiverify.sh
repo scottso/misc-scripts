@@ -42,6 +42,8 @@ ACCESS_NO_DEFAULT_USER="no default accounts"
 ACCESS_NO_DEFAULT_STRINGS="n/a"
 ACCESS_DISABLE_GUEST="no guest accounts"
 ACCESS_NO_DEFAULT_ACCOUNTS="no default accounts"
+ACCESS_NINETY_DAY_INACTIVE="No"
+ACCESS_UNIQUE_IDS="Yes"
 
 LISTEN_PORTS=`netstat -lnat | grep LISTEN | awk '{print $4}' |  sort | uniq | paste -s --delimiters=","`
 PENDING_UPDATES=`/usr/lib/update-notifier/apt-check 2>&1 | cut -d ';' -f 2`
@@ -79,8 +81,9 @@ echo "Disable Guest: ${ACCESS_DISABLE_GUEST}"
 echo "Default Accounts: ${ACCESS_NO_DEFAULT_ACCOUNTS}"
 echo "Listening Ports: ${LISTEN_PORTS}"
 echo "Number of Pending Updates: ${PENDING_UPDATES}"
-
+echo "90+ Days Inactive: ${ACCESS_NINETY_DAY_INACTIVE}"
+echo "Unique IDs: ${ACCESS_UNIQUE_IDS}"
 else
-echo # netcat comma-delimited output
+echo "'#{HOSTNAME}','${REMOTE_ACCESS}','${UNSECURED_PROTOCOL}','${UNNECESSARY_PORTS}','${PATCH_STATUS}','${PW_MIN_LEN}','${PW_COMPLEXITY}','${PW_ROTATION}','${PW_NO_DEFAULT}','${PW_NO_DISPLAY}','${PW_REUSE}','${PW_LOCKOUT}','${PW_LOCKOUT_DURATION}','${ACCESS_SESSION_TIMEOUT}','${ACCESS_NO_DEFAULT_USER}','${ACCESS_NO_DEFAULT_STRINGS}','${ACCESS_DISABLE_GUEST}','${ACCESS_NO_DEFAULT_ACCOUNTS}','${ACCESS_NINETY_DAY_INACTIVE}','${ACCESS_UNIQUE_IDS}'"
 fi
 
