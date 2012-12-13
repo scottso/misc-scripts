@@ -7,7 +7,7 @@
 # user.email set.
 
 
-if [ -z ${1} ] || [ -z ${2} || [ -z ${3} || [ -z ${4} ];
+if [ -z ${1} ] || [ -z ${2} ] || [ -z ${3} ] || [ -z ${4} ];
 then
   echo
   echo "Usage: ${0} 'Old Username' 'Old E-mail' 'New Username' 'New Email'"
