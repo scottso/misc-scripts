@@ -46,8 +46,7 @@ ACCESS_NO_DEFAULT_ACCOUNTS="no default accounts"
 ACCESS_NINETY_DAY_INACTIVE="No"
 ACCESS_UNIQUE_IDS="Yes"
 
-LISTEN_PORTS=`netstat -lnat | grep LISTEN | awk '{print $4}' | sort | uniq | paste -s --delimiters=","`
-
+LISTEN_PORTS=`netstat -lnat | grep LISTEN | grep 75.* | awk -F'[: ]+' '{print $5}' | sort | uniq | paste -s --delimiters=","`
 
 if [ -z ${2} ]
 then
@@ -83,5 +82,6 @@ echo "Listening Ports: ${LISTEN_PORTS}"
 echo "90+ Days Inactive: ${ACCESS_NINETY_DAY_INACTIVE}"
 echo "Unique IDs: ${ACCESS_UNIQUE_IDS}"
 else
+echo "Listen Ports: ${LISTEN_PORTS}"
 echo "'${HOST}','${REMOTE_ACCESS}','${UNSECURED_PROTOCOL}','${UNNECESSARY_PORTS}','${PATCH_STATUS}','${PW_MIN_LEN}','${PW_COMPLEXITY}','${PW_ROTATION}','${PW_NO_DEFAULT}','${PW_NO_DISPLAY}','${PW_REUSE}','${PW_LOCKOUT}','${PW_LOCKOUT_DURATION}','${ACCESS_SESSION_TIMEOUT}','${ACCESS_NO_DEFAULT_USER}','${ACCESS_NO_DEFAULT_STRINGS}','${ACCESS_DISABLE_GUEST}','${ACCESS_NO_DEFAULT_ACCOUNTS}','${ACCESS_NINETY_DAY_INACTIVE}','${ACCESS_UNIQUE_IDS}'"
 fi
