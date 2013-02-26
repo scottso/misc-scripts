@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# bash <(curl -s https://raw.github.com/j05h/misc-scripts/master/hiverify.sh) DFW2 127.0.0.1
 # Verify HiTrust Requirements
 
 
