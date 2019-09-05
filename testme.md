@@ -1,4 +1,4 @@
-This is an anchor test.<sup>[1](#footnote-1)</sup>
+This is an anchor test.<sup>[1](#footnotes)</sup>
 
 blah
 blah
