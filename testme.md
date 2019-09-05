@@ -4,4 +4,5 @@ blah
 blah
 blah
 
-#### Footnote-1: Yada yada
+#### Footnotes:
+1. Yada yada
