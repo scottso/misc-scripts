@@ -1,7 +1,7 @@
-This is an anchor test.<sub>[1](#footnote-1)</sub>
+This is an anchor test.<sup>[1](#footnote-1)</sup>
 
 blah
 blah
 blah
 
-Footnote-1: Yada yada
+#### Footnote-1: Yada yada
